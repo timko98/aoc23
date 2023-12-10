@@ -2,7 +2,9 @@ from typing import List
 
 
 def parse_input_file(path: str) -> List[str]:
+    content = []
     with open(path, "r") as input_file:
-        input_list = input_file.readlines()
+        for line in input_file:
+            content.append(line.rstrip())
 
-    return input_list
+    return content
