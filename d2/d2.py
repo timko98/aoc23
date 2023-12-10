@@ -1,12 +1,7 @@
 import math
 from typing import List, Dict, Tuple
 
-
-def parse_input_file(path: str) -> List[str]:
-    with open(path, "r") as input_file:
-        input_list = input_file.readlines()
-
-    return input_list
+from input_handling import parse_input_file
 
 
 def parse_game_string(game_string: str) -> Tuple[int, List[Dict[str, int]]]:
@@ -28,12 +23,12 @@ cube_configuration = {"red": 12, "green": 13, "blue": 14}
 
 
 def main():
-    input_list = parse_input_file(path="input.txt")
+    input_file = parse_input_file(path="input.txt")
 
     sum = 0
     sum_of_power = 0
 
-    for game_string in input_list:
+    for game_string in input_file:
         id, games = parse_game_string(game_string=game_string)
 
         min_cubes = {"red": 0, "green": 0, "blue": 0}
@@ -57,5 +52,5 @@ def main():
     print(f"Sum {sum}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

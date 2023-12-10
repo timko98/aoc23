@@ -1,22 +1,17 @@
 from typing import List
 
+from input_handling import parse_input_file
+
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 nums_string = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 
 
-def parse_input_file(path: str) -> List[str]:
-    with open(path, "r") as input_file:
-        input_list = input_file.readlines()
-
-    return input_list
-
-
 def main():
-    input = parse_input_file(path="input.txt")
+    input_file = parse_input_file(path="input.txt")
 
     sum = 0
 
-    for row in input:
+    for row in input_file:
         idx_values_l = list()
         idx_values_r = list()
 
@@ -47,5 +42,5 @@ def main():
     print(sum)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
