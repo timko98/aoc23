@@ -1,4 +1,3 @@
-import math
 from typing import List, Optional, Tuple
 
 from input_handling import parse_input_file
